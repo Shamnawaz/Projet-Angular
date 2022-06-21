@@ -1,0 +1,8 @@
+<p>WORKS</p>
+<form [formGroup]="film_form" (ngSubmit)="save()">
+    <input type="text" formControlName="filmTitle">
+    <textarea type="text" formControlName="filmSys"></textarea>
+    <input type="number" formControleName="filmNote">
+
+    <button type="submit" [disabled]="film_form.invalid">Sauvegarder</button>
+</form>
