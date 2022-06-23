@@ -22,9 +22,9 @@ export class AddOrEditFilmComponent {
   save() {
 
     const film = {
-      filmTitle: this.onSave.emit(this.film_form.controls.filmTitle.value),
-      filmSys: this.onSave.emit(this.film_form.controls.filmSys.value),
-      filmNote: this.onSave.emit(this.film_form.controls.filmNote.value)
+      filmTitle: this.film_form.controls.filmTitle.value,
+      filmSys: this.film_form.controls.filmSys.value,
+      filmNote: this.film_form.controls.filmNote.value
     };
 
     this.onSave.emit(film);

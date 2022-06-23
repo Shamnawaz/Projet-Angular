@@ -1,1 +1,9 @@
-<p>my-films works!</p>
+<h2>Liste des films</h2>
+
+<table *ngFor="let film of films">
+    <tr>
+        <th>{{film.titre}}</th>
+        <th>{{film.description}}</th>
+        <th>{{film.note}}</th>
+    </tr>
+</table>

@@ -1,0 +1,10 @@
+{
+    "films": [
+      {
+        "id": 1,
+        "title": "Terminator",
+        "synopsis": "no description",
+        "rating": 5
+      }
+    ]
+  }

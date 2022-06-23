@@ -7,6 +7,7 @@ import { AddOrEditFilmComponent } from './add-or-edit-film/add-or-edit-film.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes } from '@angular/router';
 import { MyFilmsComponent } from './my-films/my-films.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '/addfilm', component: AddOrEditFilmComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

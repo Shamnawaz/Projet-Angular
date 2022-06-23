@@ -8,11 +8,8 @@ import { Film } from './film';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  films: any[] = [];
+  films: Film[] = [{titre: "TEST", description: "MESSAGE", note: 4}];
   title = 'MyCine';
-
-  film = new AddOrEditFilmComponent();
-  //onFilm({}:{title: String; synopsys: String; note:number})
 
   addOrUpdateFilm(film: Film) {
     this.films.push(film);
