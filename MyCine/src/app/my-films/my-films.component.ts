@@ -21,7 +21,4 @@ export class MyFilmsComponent implements OnInit {
       this.films = films;
     })
   }  
-
-  @Input() films!: Film[]; 
-
 }
