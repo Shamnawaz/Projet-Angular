@@ -13,8 +13,17 @@ export class FilmService {
   ) {}
 
   getFilms(){
-    return this.httpClient.get<Film[]>(`${environment.api} + /films`);
+    return this.httpClient.get<Film[]>(`${environment.api}/films`);
   }
+
+  addFilms(data: Partial<Film>) {
+    return this.httpClient.post<Film>(`${environment.api}/films`, data);
+  }
+
+  deleteFilm(id: number){
+    return this.httpClient.delete<Film>(`${environment.api}/films/${id}`);
+  }
+
 }
 
 

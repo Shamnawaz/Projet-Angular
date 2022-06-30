@@ -1,6 +1,8 @@
 import{Output, EventEmitter} from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Film } from '../film';
+import { FilmService } from '../services/film.service';
 
 @Component({
   selector: 'app-add-or-edit-film',
@@ -16,18 +18,28 @@ export class AddOrEditFilmComponent {
     filmNote: new FormControl<number | null>(null, [Validators.min(0), Validators.max(5)])
   })
 
+  constructor(private service: FilmService) {}
+
 
   @Output() onSave = new EventEmitter<any>();
 
-  save() {
-
-    const film = {
-      filmTitle: this.film_form.controls.filmTitle.value,
-      filmSys: this.film_form.controls.filmSys.value,
-      filmNote: this.film_form.controls.filmNote.value
+  addFilms() {
+    const film: Partial<Film> =  {
+      titre: this.film_form.controls.filmTitle.value as string,
+      description: this.film_form.controls.filmSys.value as string,
+      note: this.film_form.controls.filmNote.value as number
     };
+    
+    this.service.addFilms(film).subscribe({
+      next: (res) => {
+        console.log(res);
+        window.location.reload();
+      },
 
-    this.onSave.emit(film);
+      error: (err) => {
+        alert('err');
+      },
+    });
   }
 
  

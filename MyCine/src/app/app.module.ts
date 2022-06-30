@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes } from '@angular/router';
 import { MyFilmsComponent } from './my-films/my-films.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DeleteFilmsComponent } from './delete-films/delete-films.component';
 
 const routes: Routes = [
   { path: '/addfilm', component: AddOrEditFilmComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AddOrEditFilmComponent,
-    MyFilmsComponent
+    MyFilmsComponent,
+    DeleteFilmsComponent
   ],
   imports: [
     BrowserModule,

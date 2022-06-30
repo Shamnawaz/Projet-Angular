@@ -1,0 +1,6 @@
+<h1>Supprimer un film</h1>
+<form [formGroup]="film_form" (ngSubmit)="deleteFilm()">
+    <input type="number" formControlName="filmId">
+
+    <button type="submit">Sauvegarder</button>
+</form>

@@ -1,8 +1,9 @@
-<p>WORKS</p>
-<form [formGroup]="film_form" (ngSubmit)="save()">
+<h1>Ajouter un film</h1>
+<!-- <form [formGroup]="film_form" (ngSubmit)="save()"> -->
+<form [formGroup]="film_form" (ngSubmit)="addFilms()">
     <input type="text" formControlName="filmTitle">
     <textarea type="text" formControlName="filmSys"></textarea>
-    <input type="number" formControleName="filmNote">
+    <input type="number" formControlName="filmNote">
 
     <button type="submit" [disabled]="film_form.invalid">Sauvegarder</button>
 </form>
